@@ -1,0 +1,17 @@
+#!/bin/bash
+PATH="$PWD/node_modules/.bin":$PATH
+set -e
+
+build() {
+    set -x
+    rm -rf dist
+    nest build
+    set +x
+}
+
+ping() {
+    echo Pong from taskfile
+    echo args: "$1" "$2" "$3"
+}
+
+"$@"
