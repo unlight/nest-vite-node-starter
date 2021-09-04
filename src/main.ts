@@ -1,14 +1,38 @@
+import {
+    INestApplication,
+    NestApplicationOptions,
+    ValidationPipe,
+} from '@nestjs/common';
 import { NestFactory } from '@nestjs/core';
 
 import { AppModule } from './app.module';
 
-if (process.env.NODE_ENV === 'production') {
-    async function bootstrap() {
-        const app = await NestFactory.create(AppModule);
-        await app.listen(3000);
-    }
-
-    bootstrap();
+export async function createApp(
+    options?: NestApplicationOptions,
+): Promise<INestApplication> {
+    const app = await NestFactory.create(AppModule, options);
+    app.enableCors();
+    app.useGlobalPipes(
+        new ValidationPipe({
+            transform: true,
+            validationError: {
+                target: false,
+            },
+        }),
+    );
+    // useContainer(app.select(AppModule), { fallbackOnErrors: true });
+    return app;
 }
 
-export const viteNodeApp = NestFactory.create(AppModule);
+async function main() {
+    const app = await createApp();
+    await app.listen(3000);
+}
+
+// #if PROD
+if (process.env.NODE_ENV === 'production') {
+    void main();
+}
+// #else
+export const viteNodeApp = createApp();
+// #endif
