@@ -17,7 +17,7 @@ module.exports = (config, webpack) => {
     });
 
     config.module.rules.unshift({
-        test: /\.ts$/,
+        test: /main\.ts$/,
         loader: 'condition-loader',
         options: {
             PROD: process.env.NODE_ENV === 'production',
