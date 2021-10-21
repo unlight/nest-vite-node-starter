@@ -9,9 +9,11 @@ build() {
     set +x
 }
 
-ping() {
-    echo Pong from taskfile
-    echo args: "$1" "$2" "$3"
+build_wp() {
+    set -x
+    rm -rf dist
+    nest build --webpack
+    set +x
 }
 
 "$@"

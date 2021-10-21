@@ -4,6 +4,9 @@
  */
 module.exports = (config, webpack) => {
     config.devtool = 'source-map';
+    config.optimization.nodeEnv = 'production';
+    config.optimization.moduleIds = 'named';
+    config.optimization.chunkIds = 'named';
     config.plugins = config.plugins.filter(p => {
         const pluginName = p?.constructor?.name;
         if (
@@ -15,20 +18,13 @@ module.exports = (config, webpack) => {
         }
         return true;
     });
-
     config.module.rules.unshift({
-        test: /main\.ts$/,
+        test: /[\\/]main\.ts$/,
         loader: 'condition-loader',
         options: {
-            PROD: process.env.NODE_ENV === 'production',
+            PROD: config.optimization.nodeEnv === 'production',
         },
     });
-
-    config.plugins.push(
-        new webpack.DefinePlugin({
-            'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV),
-        }),
-    );
 
     return config;
 };
