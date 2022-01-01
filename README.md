@@ -28,6 +28,18 @@ $ npm run test:cov
 $ npm run test:e2e
 ```
 
+```
+POST http://localhost:3000/user
+Content-type: application/json
+
+{"email":"user@mail.com","password":"123456"}
+```
+
+## Known Issues
+
+-   https://github.com/swc-project/swc/issues/2117
+-   under the hood (swc is used)
+
 ## Resources
 
 -   https://github.com/axe-me/vite-plugin-node
