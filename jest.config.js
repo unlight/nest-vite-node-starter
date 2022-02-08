@@ -1,20 +1,19 @@
-const fs = require('fs');
 const getJestMappersFromTSConfig = require('tsconfig-paths-jest-mapper');
-const swcConfig = JSON.parse(fs.readFileSync(`${__dirname}/.swcrc`, 'utf8'));
+const loadJsonFile = require('load-json-file');
+const { convert } = require('tsconfig-to-swcconfig');
+
+const swcrc = loadJsonFile('./.swcrc');
+const swcFromTsConfig = convert(undefined, undefined, {
+    sourceMaps: false,
+});
+
+const swcConfig = swcFromTsConfig;
 
 module.exports = {
     testEnvironment: 'node',
     setupFiles: ['<rootDir>/jest.setup.ts'],
     transform: {
-        '^.+\\.(t|j)sx?$': [
-            '@swc/jest',
-            {
-                ...swcConfig,
-                module: {
-                    type: 'commonjs',
-                },
-            },
-        ],
+        '^.+\\.(t|j)sx?$': ['@swc/jest', swcConfig],
     },
     collectCoverage: false,
     coverageDirectory: 'coverage',
