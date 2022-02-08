@@ -12,10 +12,6 @@ module.exports = {
                 ...swcConfig,
                 module: {
                     type: 'commonjs',
-                    strict: false,
-                    strictMode: true,
-                    lazy: false,
-                    noInterop: false,
                 },
             },
         ],
@@ -33,7 +29,6 @@ module.exports = {
     moduleNameMapper: {
         ...getJestMappersFromTSConfig(),
         '\\.(css|less|sass|scss)$': 'identity-obj-proxy',
-        '\\.(gif|ttf|eot|svg|png|jpg|jpeg)$':
-            '<rootDir>/test/__mocks__/fileMock.js',
+        '\\.(gif|ttf|eot|svg|png|jpg|jpeg)$': '<rootDir>/test/__mocks__/fileMock.js',
     },
 };

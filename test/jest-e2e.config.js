@@ -13,10 +13,6 @@ module.exports = {
                 ...swcConfig,
                 module: {
                     type: 'commonjs',
-                    strict: false,
-                    strictMode: true,
-                    lazy: false,
-                    noInterop: false,
                 },
             },
         ],

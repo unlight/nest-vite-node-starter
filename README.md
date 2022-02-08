@@ -37,7 +37,7 @@ Content-type: application/json
 
 ## Known Issues
 
--   https://github.com/swc-project/swc/issues/2117
+-   https://github.com/swc-project/swc/issues/2117 (fixed)
 -   under the hood (swc is used)
 
 ## Resources

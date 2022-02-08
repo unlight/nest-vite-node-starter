@@ -16,4 +16,12 @@ build_wp() {
     set +x
 }
 
+build_swc() {
+    set -x
+    rm -rf dist
+    export NODE_ENV=production
+    swc src --source-maps=true -d dist
+    set +x
+}
+
 "$@"

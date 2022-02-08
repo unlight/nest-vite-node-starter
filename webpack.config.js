@@ -19,12 +19,14 @@ module.exports = (config, webpack) => {
         return true;
     });
     config.module.rules.unshift({
-        test: /[\\/]main\.ts$/,
+        test: require.resolve('./src/main.ts'),
         loader: 'condition-loader',
         options: {
             PROD: config.optimization.nodeEnv === 'production',
         },
     });
+
+    config.output.iife = false;
 
     return config;
 };
