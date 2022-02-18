@@ -29,10 +29,10 @@ async function main() {
     await app.listen(3000);
 }
 
-// #if PROD
+export let viteNodeApp;
+
 if (process.env.NODE_ENV === 'production') {
     void main();
+} else {
+    viteNodeApp = createApp();
 }
-// #else
-export const viteNodeApp = createApp();
-// #endif
