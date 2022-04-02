@@ -1,4 +1,8 @@
 {
+  "ts-node": {
+    "swc": true,
+    "transpileOnly": true
+  },
   "compilerOptions": {
     "target": "es2019",
     "module": "commonjs",
