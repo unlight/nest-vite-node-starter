@@ -24,4 +24,11 @@ build_swc() {
     set +x
 }
 
+vite_build() {
+    set -x
+    export NODE_ENV=production
+    vite build --sourcemap
+    set +x
+}
+
 "$@"

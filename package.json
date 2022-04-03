@@ -20,7 +20,7 @@
     "tscheck:w": "npm run tscheck -- --watch",
     "commit": "cz",
     "build": "sh Taskfile build_wp",
-    "vite:build": "vite build --sourcemap",
+    "vite:build": "sh Taskfile vite_build",
     "test:e2e": "jest --runInBand --config ./test/jest-e2e.config.js",
     "test:d": "ndb -r @swc/register node_modules/jest/bin/jest.js --runInBand --watch"
   },
@@ -30,13 +30,11 @@
   },
   "devDependencies": {
     "@nestjs/cli": "^8.2.4",
-    "@nestjs/microservices": "^8.4.3",
     "@nestjs/platform-express": "^8.4.3",
     "@nestjs/schematics": "^8.0.9",
     "@nestjs/testing": "^8.4.3",
-    "@nestjs/websockets": "^8.4.3",
     "@swc/cli": "^0.1.57",
-    "@swc/core": "^1.2.162",
+    "@swc/core": "^1.2.163",
     "@swc/helpers": "^0.3.8",
     "@swc/jest": "^0.2.20",
     "@swc/register": "^0.1.10",
@@ -70,6 +68,7 @@
     "typescript": "^4.6.3",
     "vite": "^2.9.1",
     "vite-plugin-node": "^0.0.19",
+    "vite-tsconfig-paths": "^3.4.1",
     "watchexec-bin": "^1.0.0",
     "webpack": "^5.71.0"
   }
