@@ -20,7 +20,7 @@
     "tscheck:w": "npm run tscheck -- --watch",
     "commit": "cz",
     "build": "sh Taskfile build_wp",
-    "vite:build": "sh Taskfile vite_build",
+    "build:vite": "sh Taskfile build_vite",
     "test:e2e": "jest --runInBand --config ./test/jest-e2e.config.js",
     "test:d": "ndb -r @swc/register node_modules/jest/bin/jest.js --runInBand --watch"
   },
