@@ -46,6 +46,7 @@ module.exports = {
                     ref: false,
                     params: false,
                 },
+                checkFilenames: false
             },
         ],
         // typescript-eslint

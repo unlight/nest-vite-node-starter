@@ -25,16 +25,16 @@
     "test:d": "ndb -r @swc/register node_modules/jest/bin/jest.js --runInBand --watch"
   },
   "dependencies": {
-    "@nestjs/common": "^8.4.3",
-    "@nestjs/core": "^8.4.3"
+    "@nestjs/common": "^8.4.4",
+    "@nestjs/core": "^8.4.4"
   },
   "devDependencies": {
-    "@nestjs/cli": "^8.2.4",
-    "@nestjs/platform-express": "^8.4.3",
-    "@nestjs/schematics": "^8.0.9",
-    "@nestjs/testing": "^8.4.3",
+    "@nestjs/cli": "^8.2.5",
+    "@nestjs/platform-express": "^8.4.4",
+    "@nestjs/schematics": "^8.0.10",
+    "@nestjs/testing": "^8.4.4",
     "@swc/cli": "^0.1.57",
-    "@swc/core": "^1.2.163",
+    "@swc/core": "^1.2.164",
     "@swc/helpers": "^0.3.8",
     "@swc/jest": "^0.2.20",
     "@swc/register": "^0.1.10",
@@ -42,8 +42,8 @@
     "@types/jest": "^27.4.1",
     "@types/node": "^17.0.23",
     "@types/supertest": "^2.0.12",
-    "@typescript-eslint/eslint-plugin": "^5.17.0",
-    "@typescript-eslint/parser": "^5.17.0",
+    "@typescript-eslint/eslint-plugin": "^5.18.0",
+    "@typescript-eslint/parser": "^5.18.0",
     "class-transformer": "^0.5.1",
     "class-validator": "^0.13.2",
     "env-bool": "^2.0.1",
@@ -70,6 +70,6 @@
     "vite-plugin-node": "^0.0.19",
     "vite-tsconfig-paths": "^3.4.1",
     "watchexec-bin": "^1.0.0",
-    "webpack": "^5.71.0"
+    "webpack": "^5.72.0"
   }
 }
