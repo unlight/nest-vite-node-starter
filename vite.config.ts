@@ -7,6 +7,9 @@ export default defineConfig(({ command, mode }: ConfigEnv) => {
         build: {
             target: 'es2020',
         },
+        define: {
+            'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV),
+        },
         optimizeDeps: {
             // Vite does not work well with optionnal dependencies, mark them as ignored for now
             exclude: [
