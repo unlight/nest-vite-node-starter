@@ -39,6 +39,9 @@ Content-type: application/json
 
 -   https://github.com/swc-project/swc/issues/2117 (fixed)
 -   under the hood (swc is used)
+-   https://github.com/vitest-dev/vitest/issues/708 (will not be fixed) (issue when vite-plugin-node is not used)
+    -   Build files with esbuild as a bundler (which might require a lot of custom options), and run tests against it
+    -   Use swc plugin https://github.com/egoist/unplugin-swc
 
 ## Resources
 
